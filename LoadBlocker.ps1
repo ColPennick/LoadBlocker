@@ -147,7 +147,7 @@ function Initialize-BurntToastSupport {
     if ($toastAvailable) {
         try {
             Write-Host "Sending test toast notification..." -ForegroundColor Cyan
-            New-BurntToastNotification -Text "LockBlocker", "Test notification - BurntToast is working!" -ErrorAction Stop
+            New-BurntToastNotification -Text "LockBlocker", "BurntToast notifications are active!" -ErrorAction Stop
             Write-Host "Test toast notification sent. If you don't see it, check your Windows notification settings." -ForegroundColor Green
         }
         catch {
@@ -192,6 +192,7 @@ function Show-StatusInformation {
     [CmdletBinding()]
     param()
     
+	#$currentWeather = (curl "wttr.in/Findorff?format=4")
     $currentDate = Get-Date
     $formattedDate = $currentDate.ToString("dddd, d MMMM yyyy HH:mm:ss")
     
@@ -210,7 +211,9 @@ function Show-StatusInformation {
     }
     
     Write-Host "`nLast run: $formattedDate"
-    Write-Host "Using key: $KeyToPress | Interval: every $Interval seconds."
+	Write-Host -NoNewline "Current weather in "
+	curl "wttr.in/Bremen?format=4"
+    Write-Host "Simulating key: $KeyToPress | Interval: every $Interval seconds."
     Write-Host "Press 'Q' to quit."
 }
 
