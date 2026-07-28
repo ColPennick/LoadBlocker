@@ -1,6 +1,3 @@
-#
-# LockBlocker.ps1 (c) 2024 by Lilith Frahm, https://LilithFrahm.de
-#
 <#
 .SYNOPSIS
     Prevents the computer from locking by simulating key presses at configurable intervals.
@@ -36,7 +33,18 @@
     BurntToast Support:
     If the BurntToast module is installed, it will be used to show toast notifications.
     To install BurntToast: Install-Module -Name BurntToast -Scope CurrentUser
+	
+.LINK
+    https://github.com/ColPennick/LoadBlocker
+.LINK
+    https://github.com/Windos/BurntToast
+.LINK
+    https://github.com/chubin/wttr.in
 #>
+
+#
+# LockBlocker.ps1 (c) 2024 by Lilith Frahm, https://LilithFrahm.de
+#
 
 [CmdletBinding()]
 param (
@@ -212,7 +220,7 @@ function Show-StatusInformation {
     
     Write-Host "`nLast run: $formattedDate"
 	Write-Host -NoNewline "Current weather in "
-	curl "wttr.in/Bremen?format=4"
+	irm "wttr.in/Bremen?format=4"
     Write-Host "Simulating key: $KeyToPress | Interval: every $Interval seconds."
     Write-Host "Press 'Q' to quit."
 }
