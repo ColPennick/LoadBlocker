@@ -35,7 +35,7 @@
     To install BurntToast: Install-Module -Name BurntToast -Scope CurrentUser
 	
 .LINK
-    https://github.com/ColPennick/LoadBlocker
+    https://github.com/ColPennick/LockBlocker
 .LINK
     https://github.com/Windos/BurntToast
 .LINK

@@ -1,13 +1,13 @@
-# LoadBlocker
+# LockBlocker
 
-LoadBlocker.ps1 is a PowerShell script that prevents the computer from locking by simulating a Scroll Lock key press every 299 seconds. It also displays the execution timestamp and battery status. The script runs indefinitely until manually stopped.
+LockBlocker.ps1 is a PowerShell script that prevents the computer from locking by simulating a Scroll Lock key press every 299 seconds. It also displays the execution timestamp and battery status. The script runs indefinitely until manually stopped.
 
 ## Usage
 
-1. Save the script as `LoadBlocker.ps1`.
+1. Save the script as `LockBlocker.ps1`.
 2. Open a PowerShell window.
 3. Navigate to the directory where the script is saved.
-4. Run the script by typing `.\LoadBlocker.ps1` and pressing Enter.
+4. Run the script by typing `.\LockBlocker.ps1` and pressing Enter.
 5. To stop the script, press `Q` or `Ctrl+C` in the PowerShell window.
 
 ## Features
@@ -18,7 +18,7 @@ LoadBlocker.ps1 is a PowerShell script that prevents the computer from locking b
 ## Example
 
 ```powershell
-$host.UI.RawUI.WindowTitle = "Lilith's LoadBlocker"
+$host.UI.RawUI.WindowTitle = "Lilith's LockBlocker"
 
 Add-Type -TypeDefinition @"
 using System;
@@ -37,7 +37,7 @@ $keypressInterval = 299
 function Show-DateTime {
     $currentDate = Get-Date
     $formattedDate = $currentDate.ToString("dddd, d. MMMM yyyy HH:mm:ss")
-    Write-Host "LoadBlocker active." -ForegroundColor Green
+    Write-Host "LockBlocker active." -ForegroundColor Green
     Write-Host "`nLast execution: $formattedDate"
     Write-Host "Block interval every $keypressInterval seconds."
 }
@@ -75,4 +75,4 @@ while ($true) {
 ```
 ## License
 
-LoadBlocker (c) 2024 by Lilith Frahm, [https://LilithFrahm.de](https://LilithFrahm.de)
+LockBlocker (c) 2024 by Lilith Frahm, [https://LilithFrahm.de](https://LilithFrahm.de)
